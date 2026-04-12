@@ -141,6 +141,4 @@ Right now, lots of content on your site is marked **PLACEHOLDER**. That's stuff 
 
 ---
 
-## Who to contact when stuck
-
-**Garrett.** Always. He'd rather hear from you early than have you frustrated.
+LMK if you have any questions or need help with anything!!
