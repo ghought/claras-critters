@@ -45,9 +45,11 @@ permalink: /index.html
       <div class="hero-copy reveal">
         <h1>{{ site.businessName }}</h1>
         <p class="tagline">{{ site.tagline }}</p>
-        <p class="hero-sub">{{ site.serviceAreaLong }}</p>
         <a href="#contact" class="btn btn-primary">Request a meet &amp; greet</a>
-        <p class="hero-microcopy">Serving {{ site.serviceArea }}.</p>
+        <p class="hero-microcopy">
+          <span class="hero-badge" aria-hidden="true">🐾</span>
+          Now accepting new clients
+        </p>
       </div>
       <div class="hero-photo reveal">
         {% image site.heroPhoto, site.heroPhotoAlt, "(min-width: 1024px) 540px, 100vw" %}
@@ -152,7 +154,7 @@ permalink: /index.html
     <div class="container">
       <header class="section-header reveal">
         <h2>What clients say</h2>
-        <p>Real reviews coming soon — these are placeholders.</p>
+        <p>A few kind words from families who've trusted me with their critters.</p>
       </header>
 
       <ul class="testimonial-grid" role="list">

@@ -36,6 +36,18 @@
       "duration": "Per visit",
       "price": "+$5",
       "notes": "Add-on for any visit. No charge for simple oral meds."
+    },
+    {
+      "service": "Horse care visit",
+      "duration": "Per visit",
+      "price": "$35",
+      "notes": "Feeding, water, turnout, stall pick, and a once-over."
+    },
+    {
+      "service": "Exercise ride or lunging",
+      "duration": "45 min",
+      "price": "$45",
+      "notes": "Standalone or add-on. We'll discuss your horse at the meet & greet."
     }
   ]
 }
