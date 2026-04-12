@@ -52,7 +52,7 @@ Netlify auto-detects the `<form data-netlify="true">` in `index.njk`, so this sh
 1. **Forms → Settings & usage → Form notifications → Add notification → Email notification.**
 2. **Event:** New form submission.
 3. **Form:** `contact`.
-4. **Email to notify:** `horselvr.849@gmail.com`.
+4. **Email to notify:** `clara.jean.418@gmail.com`.
 5. Save.
 6. Submit one more test from the live site and confirm Clara's inbox receives the email. (Tell Clara to check spam the first time.)
 
@@ -70,7 +70,7 @@ Netlify Identity is what gates `/admin/`. It supports as many users as you want 
 4. **Services → Git Gateway → Enable Git Gateway.** This is what lets Decap CMS commit edits back to the GitHub repo.
 5. **Identity → Invite users → Invite.** Enter **both** emails, one per line:
    - Your own email (so you can test the admin portal and debug).
-   - `horselvr.849@gmail.com` (Clara).
+   - `clara.jean.418@gmail.com` (Clara).
 6. Each person receives a separate invitation email. Clicking "Accept the invite" lands them on the homepage with `#invite_token=...` appended to the URL; the Netlify Identity widget baked into `base.njk` picks up that token, prompts them to set a password, and then redirects them into `/admin/`.
 7. After the first login, visiting `/admin/` directly and entering email + password works normally.
 
@@ -120,7 +120,7 @@ Once the domain is live, update `src/_data/site.json` → `url` to `https://clar
 - [ ] Submit the contact form and confirm:
   - You land on `/thanks/`.
   - The submission appears in Netlify → Forms.
-  - The notification email arrives at `horselvr.849@gmail.com`.
+  - The notification email arrives at `clara.jean.418@gmail.com`.
 - [ ] Visit `/admin/`, log in as Clara's invited account, edit one piece of content (e.g., change the hero tagline), save.
 - [ ] Within ~1 minute, the live site reflects the change.
 
@@ -135,5 +135,5 @@ Send her `HANDOFF.md` and the URL to `/admin/`. That's it.
 ## Things you might want to do later (not for v1)
 
 - **Plausible analytics:** add one `<script>` tag to `base.njk`. ~30 seconds.
-- **Custom email forwarding** so the publicly-displayed contact email isn't `horselvr.849@gmail.com`. Set up a forwarder at your registrar (e.g., `hello@clarascritters.com → horselvr.849@gmail.com`), then update the displayed email through `/admin/` → Site settings.
+- **Custom email forwarding** so the publicly-displayed contact email isn't `clara.jean.418@gmail.com`. Set up a forwarder at your registrar (e.g., `hello@clarascritters.com → clara.jean.418@gmail.com`), then update the displayed email through `/admin/` → Site settings.
 - **Real photos:** as Clara uploads her own photos through the admin, the placeholder Unsplash URLs in the data files get replaced with `/uploads/...` paths automatically.

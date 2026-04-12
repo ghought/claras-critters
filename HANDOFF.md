@@ -19,7 +19,7 @@ Bookmark both.
 
 ## How to log in (first time)
 
-1. Check your email (`horselvr.849@gmail.com`) for a message from Netlify titled something like *"You've been invited to Clara's Critters"*. If you don't see it, check your spam folder.
+1. Check your email (`clara.jean.418@gmail.com`) for a message from Netlify titled something like *"You've been invited to Clara's Critters"*. If you don't see it, check your spam folder.
 2. Click the **Accept the invite** button in that email.
 3. You'll land on your website. A little box will pop up asking you to set a password — pick something you'll remember.
 4. Once you've set a password, you'll be sent into the editor automatically.
@@ -108,7 +108,7 @@ To **remove** a rate, click the trash can icon next to it.
 
 When someone fills out the contact form on your site, two things happen:
 
-1. **You get an email** at `horselvr.849@gmail.com` with everything they wrote.
+1. **You get an email** at `clara.jean.418@gmail.com` with everything they wrote.
 2. **A copy is saved** in your Netlify dashboard as a backup, in case the email goes missing.
 
 You don't need to log in to Netlify for the normal flow — just check your email.
