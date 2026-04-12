@@ -1,0 +1,41 @@
+{
+  "note": "PLACEHOLDER — Clara to confirm all prices.",
+  "items": [
+    {
+      "service": "Drop-in visit",
+      "duration": "30 min",
+      "price": "$22",
+      "notes": "Feeding, fresh water, potty break, and play."
+    },
+    {
+      "service": "Dog walk",
+      "duration": "30 min",
+      "price": "$25",
+      "notes": "Single dog. +$5 per additional dog from the same household."
+    },
+    {
+      "service": "Dog walk",
+      "duration": "60 min",
+      "price": "$40",
+      "notes": "Single dog. Great for high-energy breeds."
+    },
+    {
+      "service": "Overnight sitting (in-home)",
+      "duration": "Per night",
+      "price": "$85",
+      "notes": "Includes evening and morning care for your pets."
+    },
+    {
+      "service": "Cat care visit",
+      "duration": "30 min",
+      "price": "$22",
+      "notes": "Litter, food, water, and quiet company."
+    },
+    {
+      "service": "Medication administration",
+      "duration": "Per visit",
+      "price": "+$5",
+      "notes": "Add-on for any visit. No charge for simple oral meds."
+    }
+  ]
+}

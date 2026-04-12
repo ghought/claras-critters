@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "title": "Drop-in visits",
+      "description": "A 30-minute check-in for feeding, fresh water, playtime, and a potty break. Perfect for cats and independent dogs.",
+      "emoji": "🏡"
+    },
+    {
+      "title": "Dog walks",
+      "description": "30 or 60 minute leashed walks tailored to your dog's pace. Treats, water, and tail wags included.",
+      "emoji": "🐕"
+    },
+    {
+      "title": "Overnight sitting",
+      "description": "I stay in your home overnight so your pets keep their routine and their favorite spot on the couch.",
+      "emoji": "🌙"
+    },
+    {
+      "title": "Cat care",
+      "description": "Litter, food, fresh water, brushing, and as much (or as little) lap time as your cat will allow.",
+      "emoji": "🐈"
+    },
+    {
+      "title": "Medication administration",
+      "description": "Pills, drops, injections, and special diets handled with patience and care for senior or medically fragile pets.",
+      "emoji": "💊"
+    }
+  ]
+}

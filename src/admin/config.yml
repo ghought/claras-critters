@@ -1,0 +1,114 @@
+# Decap CMS configuration for Clara's Critters.
+# Edits made through /admin/ commit to the `main` branch via Netlify's Git Gateway,
+# which triggers a Netlify rebuild.
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images live in the repo and how they're referenced from the site.
+media_folder: "uploads"
+public_folder: "/uploads"
+
+# Show a preview link in the editor UI
+site_url: https://clarascritters.com
+display_url: https://clarascritters.com
+
+collections:
+  - name: content
+    label: "Site content"
+    description: "Everything Clara can edit on the site."
+    files:
+
+      # ─── Site settings ────────────────────────────────────────────────
+      - label: "Site settings"
+        name: site
+        file: "src/_data/site.json"
+        format: json
+        fields:
+          - { label: "Business name", name: businessName, widget: string }
+          - { label: "Tagline (one short line under the title)", name: tagline, widget: string }
+          - { label: "Service area (short)", name: serviceArea, widget: string, hint: "e.g. Bozeman, Montana" }
+          - { label: "Service area (long)", name: serviceAreaLong, widget: string, hint: "e.g. Serving Bozeman, Montana and surrounding areas" }
+          - { label: "Phone number (display)", name: phone, widget: string, hint: "Plain text. Will not be made clickable." }
+          - { label: "Phone (international format)", name: phoneIntl, widget: string, hint: "Used for search engines only. e.g. +1-425-633-6234" }
+          - { label: "Public contact email", name: emailDisplay, widget: string, hint: "Shown on the site. Form submissions are sent to the address configured in Netlify." }
+          - { label: "Hero photo", name: heroPhoto, widget: image }
+          - { label: "Hero photo description (alt text)", name: heroPhotoAlt, widget: string }
+          - { label: "Site URL", name: url, widget: string, required: false }
+          - { label: "Page description (for Google)", name: metaDescription, widget: text }
+
+      # ─── About ────────────────────────────────────────────────────────
+      - label: "About Clara"
+        name: about
+        file: "src/_data/about.json"
+        format: json
+        fields:
+          - label: "Bio"
+            name: bio
+            widget: text
+            hint: "Two or three short paragraphs. Separate paragraphs with a blank line."
+          - { label: "Portrait photo", name: portrait, widget: image }
+          - { label: "Portrait alt text", name: portraitAlt, widget: string }
+
+      # ─── Services ─────────────────────────────────────────────────────
+      - label: "Services"
+        name: services
+        file: "src/_data/services.json"
+        format: json
+        fields:
+          - label: "Services"
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: title, widget: string }
+              - { label: "Short description", name: description, widget: text }
+              - { label: "Emoji", name: emoji, widget: string, hint: "A single emoji like 🐶 or 🌙" }
+
+      # ─── Rates ────────────────────────────────────────────────────────
+      - label: "Rates"
+        name: rates
+        file: "src/_data/rates.json"
+        format: json
+        fields:
+          - { label: "Note shown under the rates table", name: note, widget: string, required: false }
+          - label: "Rates"
+            name: items
+            widget: list
+            summary: "{{fields.service}} — {{fields.duration}} — {{fields.price}}"
+            fields:
+              - { label: "Service", name: service, widget: string }
+              - { label: "Length / unit", name: duration, widget: string, hint: "e.g. 30 min, Per night" }
+              - { label: "Price", name: price, widget: string, hint: "e.g. $25" }
+              - { label: "Notes", name: notes, widget: string, required: false }
+
+      # ─── Gallery ──────────────────────────────────────────────────────
+      - label: "Gallery"
+        name: gallery
+        file: "src/_data/gallery.json"
+        format: json
+        fields:
+          - label: "Photos"
+            name: items
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Image", name: image, widget: image }
+              - { label: "Alt text (description for screen readers)", name: alt, widget: string }
+              - { label: "Caption", name: caption, widget: string, required: false }
+
+      # ─── Testimonials ─────────────────────────────────────────────────
+      - label: "Testimonials"
+        name: testimonials
+        file: "src/_data/testimonials.json"
+        format: json
+        fields:
+          - label: "Reviews"
+            name: items
+            widget: list
+            summary: "{{fields.author}}"
+            fields:
+              - { label: "Quote", name: quote, widget: text }
+              - { label: "Author", name: author, widget: string }
+              - { label: "Pet name (optional)", name: pet, widget: string, required: false }

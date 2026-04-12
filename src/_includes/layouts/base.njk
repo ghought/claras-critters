@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title or site.businessName }}</title>
+    <meta name="description" content="{{ site.metaDescription }}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <meta property="og:title" content="{{ site.businessName }}" />
+    <meta property="og:description" content="{{ site.metaDescription }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}" />
+    <meta property="og:image" content="{{ site.heroPhoto }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="canonical" href="{{ site.url }}" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "{{ site.businessName }}",
+        "description": "{{ site.metaDescription }}",
+        "telephone": "{{ site.phoneIntl }}",
+        "email": "{{ site.emailDisplay }}",
+        "url": "{{ site.url }}",
+        "image": "{{ site.heroPhoto }}",
+        "areaServed": {
+          "@type": "City",
+          "name": "Bozeman",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bozeman",
+            "addressRegion": "MT",
+            "addressCountry": "US"
+          }
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bozeman",
+          "addressRegion": "MT",
+          "addressCountry": "US"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "07:00",
+            "closes": "21:00"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    {{ content | safe }}
+
+    <script src="/assets/js/main.js" defer></script>
+
+    {# Netlify Identity widget — handles invite-token redirects from email
+       so Clara can finish creating her admin account. Stays out of the way
+       for normal visitors. #}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function (user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function () {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

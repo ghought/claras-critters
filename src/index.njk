@@ -1,0 +1,280 @@
+---
+layout: layouts/base.njk
+title: Clara's Critters — Pet Sitting in Bozeman, Montana
+permalink: /index.html
+---
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="{{ site.businessName }} — home">
+      <span class="brand-mark" aria-hidden="true">🐾</span>
+      <span class="brand-name">{{ site.businessName }}</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="Open menu"
+    >
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#rates">Rates</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  {# ───────────────── HERO ───────────────── #}
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <h1>{{ site.businessName }}</h1>
+        <p class="tagline">{{ site.tagline }}</p>
+        <p class="hero-sub">{{ site.serviceAreaLong }}</p>
+        <a href="#contact" class="btn btn-primary">Request a meet &amp; greet</a>
+        <p class="hero-microcopy">Serving {{ site.serviceArea }}.</p>
+      </div>
+      <div class="hero-photo reveal">
+        {% image site.heroPhoto, site.heroPhotoAlt, "(min-width: 1024px) 540px, 100vw" %}
+      </div>
+    </div>
+  </section>
+
+  {# ───────────────── SERVICES ───────────────── #}
+  <section id="services" class="section section-services">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>What I do</h2>
+        <p>Reliable, in-home care for the critters you love.</p>
+      </header>
+
+      <ul class="service-grid" role="list">
+        {% for s in services.items %}
+          <li class="service-card reveal">
+            <span class="service-emoji" aria-hidden="true">{{ s.emoji }}</span>
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.description }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  {# ───────────────── RATES ───────────────── #}
+  <section id="rates" class="section section-rates">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>Rates</h2>
+        <p>Straightforward pricing. No surprises.</p>
+      </header>
+
+      <div class="rates-table-wrap reveal">
+        <table class="rates-table">
+          <caption class="visually-hidden">Service rates</caption>
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Length</th>
+              <th scope="col">Price</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in rates.items %}
+              <tr>
+                <th scope="row">{{ r.service }}</th>
+                <td>{{ r.duration }}</td>
+                <td class="price">{{ r.price }}</td>
+                <td>{{ r.notes }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      {% if rates.note %}
+        <p class="rates-note">{{ rates.note }}</p>
+      {% endif %}
+    </div>
+  </section>
+
+  {# ───────────────── ABOUT ───────────────── #}
+  <section id="about" class="section section-about">
+    <div class="container about-inner">
+      <div class="about-photo reveal">
+        {% image about.portrait, about.portraitAlt, "(min-width: 1024px) 380px, 70vw" %}
+      </div>
+      <div class="about-copy reveal">
+        <h2>About Clara</h2>
+        {% for para in about.bio.split("\n\n") %}
+          <p>{{ para }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# ───────────────── GALLERY ───────────────── #}
+  <section id="gallery" class="section section-gallery">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>Critters I've cared for</h2>
+        <p>A few of my favorite repeat customers.</p>
+      </header>
+
+      <ul class="gallery-grid" role="list">
+        {% for g in gallery.items %}
+          <li class="gallery-item reveal">
+            {% image g.image, g.alt, "(min-width: 1024px) 320px, 45vw" %}
+            {% if g.caption %}<p class="gallery-caption">{{ g.caption }}</p>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  {# ───────────────── TESTIMONIALS ───────────────── #}
+  <section id="testimonials" class="section section-testimonials">
+    <div class="container">
+      <header class="section-header reveal">
+        <h2>What clients say</h2>
+        <p>Real reviews coming soon — these are placeholders.</p>
+      </header>
+
+      <ul class="testimonial-grid" role="list">
+        {% for t in testimonials.items %}
+          <li class="testimonial reveal">
+            <blockquote>
+              <p>&ldquo;{{ t.quote }}&rdquo;</p>
+            </blockquote>
+            <footer class="testimonial-meta">
+              <strong>{{ t.author }}</strong>
+              {% if t.pet %}<span> — {{ t.pet }}</span>{% endif %}
+            </footer>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  {# ───────────────── CONTACT ───────────────── #}
+  <section id="contact" class="section section-contact">
+    <div class="container contact-inner">
+      <div class="contact-copy reveal">
+        <h2>Request a meet &amp; greet</h2>
+        <p>Tell me about your pets and what kind of care you're looking for. I usually reply within a day.</p>
+
+        <dl class="contact-details">
+          <div>
+            <dt>Phone</dt>
+            <dd>
+              {{ site.phone }}
+              <span class="texts-welcome">Texts welcome.</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:{{ site.emailDisplay }}">{{ site.emailDisplay }}</a></dd>
+          </div>
+          <div>
+            <dt>Service area</dt>
+            <dd>{{ site.serviceAreaLong }}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <form
+        class="contact-form reveal"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/thanks/"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hp-field" aria-hidden="true">
+          <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
+
+        <div class="field">
+          <label for="f-name">Your name <span aria-hidden="true">*</span></label>
+          <input id="f-name" name="name" type="text" required autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="f-email">Email <span aria-hidden="true">*</span></label>
+          <input id="f-email" name="email" type="email" required autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="f-phone">Phone <span class="optional">(optional)</span></label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+
+        <div class="field">
+          <label for="f-pets">Tell me about your pets <span aria-hidden="true">*</span></label>
+          <input
+            id="f-pets"
+            name="pets"
+            type="text"
+            required
+            placeholder="e.g. 2 cats, 1 senior dog"
+            aria-describedby="f-pets-help"
+          />
+          <small id="f-pets-help">Type, number, ages, and anything I should know.</small>
+        </div>
+
+        <div class="field">
+          <label for="f-service">Service interest</label>
+          <select id="f-service" name="service">
+            <option value="">— Choose one —</option>
+            {% for s in services.items %}
+              <option value="{{ s.title }}">{{ s.title }}</option>
+            {% endfor %}
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-dates">Dates needed</label>
+          <input id="f-dates" name="dates" type="text" placeholder="e.g. June 14–21, weekday mornings" />
+        </div>
+
+        <div class="field">
+          <label for="f-message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="f-message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Send request</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-brand">
+      <span aria-hidden="true">🐾</span> {{ site.businessName }}
+    </p>
+    <p class="footer-meta">
+      {{ site.serviceArea }} ·
+      <a href="mailto:{{ site.emailDisplay }}">{{ site.emailDisplay }}</a> ·
+      {{ site.phone }}
+    </p>
+    <p class="footer-copy">© <span id="year">2026</span> {{ site.businessName }}. All rights reserved.</p>
+  </div>
+</footer>
