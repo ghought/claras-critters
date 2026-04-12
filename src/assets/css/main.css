@@ -360,31 +360,40 @@ p { margin: 0 0 1rem; }
   padding: 1rem 1.1rem;
   border-bottom: 1px solid var(--color-rule);
   vertical-align: top;
-  word-wrap: break-word;
-  overflow-wrap: anywhere;
 }
 .rates-table thead th {
   background: var(--color-bg-alt);
   font-family: var(--font-display);
   font-weight: 700;
   color: var(--color-primary-d);
+  white-space: nowrap; /* never break a column header mid-word */
 }
 .rates-table tbody tr:last-child th,
 .rates-table tbody tr:last-child td {
   border-bottom: none;
+}
+.rates-table tbody th,
+.rates-table tbody td {
+  overflow-wrap: break-word;
 }
 .rates-table .price {
   font-weight: 600;
   color: var(--color-primary-d);
   white-space: nowrap;
 }
+.rates-table .duration { white-space: nowrap; }
 
-/* Mobile: drop the Notes column so the table fits without horizontal scroll.
-   Using tr > *:nth-child(4) so it targets the 4th cell whether it's a th or td. */
-@media (max-width: 640px) {
+/* Mobile + small tablets: drop the Notes column so the table fits without
+   horizontal scroll. Breakpoint is 768px so iPad Mini portrait also gets
+   the stripped-down view. Using tr > *:nth-child(4) so it targets the 4th
+   cell whether it's a <th> or <td>. */
+@media (max-width: 768px) {
+  .rates-table {
+    font-size: 0.94rem;
+  }
   .rates-table th,
   .rates-table td {
-    padding: 0.8rem 0.7rem;
+    padding: 0.75rem 0.7rem;
   }
   .rates-table tr > *:nth-child(4) {
     display: none;
