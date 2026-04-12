@@ -62,14 +62,34 @@ Netlify auto-detects the `<form data-netlify="true">` in `index.njk`, so this sh
 
 ## 4. Enable Netlify Identity (admin login)
 
-1. **Site settings → Identity → Enable Identity.**
-2. **Registration preferences → Invite only.** (Critical — do not leave this open.)
-3. **External providers:** leave off. Email/password is enough for one user.
-4. **Services → Git Gateway → Enable Git Gateway.** This is what lets Decap CMS commit edits back to the repo.
-5. **Identity → Invite users → Invite.** Enter `horselvr.849@gmail.com`.
-6. Clara will receive an invitation email. The link in that email lands her on the homepage with `#invite_token=...` appended; the Netlify Identity widget on the page picks that up, prompts her to set a password, and then redirects her into `/admin/`.
+Netlify Identity is what gates `/admin/`. It supports as many users as you want — there are no per-seat costs on the free tier up to 5 active users, which is plenty.
 
-> If the invite email doesn't arrive: resend from **Identity → Users**, and tell her to check spam.
+1. **Site settings → Identity → Enable Identity.**
+2. **Registration preferences → Invite only.** (Critical — do not leave this open, otherwise anyone on the internet can make an admin account.)
+3. **External providers:** leave off. Email/password is all you need.
+4. **Services → Git Gateway → Enable Git Gateway.** This is what lets Decap CMS commit edits back to the GitHub repo.
+5. **Identity → Invite users → Invite.** Enter **both** emails, one per line:
+   - Your own email (so you can test the admin portal and debug).
+   - `horselvr.849@gmail.com` (Clara).
+6. Each person receives a separate invitation email. Clicking "Accept the invite" lands them on the homepage with `#invite_token=...` appended to the URL; the Netlify Identity widget baked into `base.njk` picks up that token, prompts them to set a password, and then redirects them into `/admin/`.
+7. After the first login, visiting `/admin/` directly and entering email + password works normally.
+
+Both accounts are full-access — there are no roles or permissions in Decap CMS. If Clara ever leaves or you want to rotate access, go to **Identity → Users**, hit the three-dot menu next to a user, and **Delete**.
+
+### Testing the admin portal yourself (recommended before handing off to Clara)
+
+1. Accept your own invite, set a password, and log in to `/admin/`.
+2. Click through each section in the left sidebar (Site settings, About, Services, Rates, Gallery, Testimonials). Confirm the forms load with the current content.
+3. Make a small, reversible edit — e.g., change the hero tagline to "Test edit" and publish.
+4. Wait ~1 minute for Netlify to rebuild, refresh the live site, and confirm the change appears.
+5. Change it back and publish again.
+6. Do the same round-trip with an image upload on the Gallery collection to confirm Git Gateway handles `uploads/` correctly.
+
+Once you've done this dry run, you can confidently send Clara her invite and the `HANDOFF.md` doc.
+
+> **If invite emails don't arrive:** resend from **Identity → Users → [user] → Resend invitation**. Tell the recipient to check spam — Netlify's invitation emails come from `noreply@netlify.com` and Gmail sometimes filters them the first time.
+
+> **If `/admin/` shows "Config Errors" after login:** Git Gateway probably isn't enabled yet. Go back to **Identity → Services → Git Gateway → Enable**.
 
 ---
 
