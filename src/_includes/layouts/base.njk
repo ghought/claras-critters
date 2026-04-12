@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ title or site.businessName }}</title>
     <meta name="description" content="{{ site.metaDescription }}" />
+    <meta name="theme-color" content="#2F6F5E" />
+
+    {# Favicons — SVG for modern browsers, PNG fallbacks for Safari / old browsers,
+       apple-touch-icon for iOS home screen. #}
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,12 +24,22 @@
 
     <link rel="stylesheet" href="/assets/css/main.css" />
 
-    <meta property="og:title" content="{{ site.businessName }}" />
+    {# Open Graph — for Facebook, iMessage, LinkedIn, Slack, etc. #}
+    <meta property="og:site_name" content="{{ site.businessName }}" />
+    <meta property="og:title" content="{{ title or (site.businessName + ' — ' + site.tagline) }}" />
     <meta property="og:description" content="{{ site.metaDescription }}" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="{{ site.url }}" />
     <meta property="og:image" content="{{ site.heroPhoto }}" />
+    <meta property="og:image:alt" content="{{ site.heroPhotoAlt }}" />
+
+    {# Twitter / X Card — explicit rather than relying on og: fallback #}
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title or (site.businessName + ' — ' + site.tagline) }}" />
+    <meta name="twitter:description" content="{{ site.metaDescription }}" />
+    <meta name="twitter:image" content="{{ site.heroPhoto }}" />
+    <meta name="twitter:image:alt" content="{{ site.heroPhotoAlt }}" />
 
     <link rel="canonical" href="{{ site.url }}" />
 

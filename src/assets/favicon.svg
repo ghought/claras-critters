@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Clara's Critters paw print">
+  <rect width="64" height="64" rx="12" fill="#2F6F5E"/>
+  <g fill="#FFF8EC">
+    <!-- Metacarpal (main) pad -->
+    <ellipse cx="32" cy="44" rx="14" ry="11"/>
+    <!-- Four toe pads, fanned above the main pad -->
+    <ellipse cx="12" cy="26" rx="5" ry="7"/>
+    <ellipse cx="24" cy="14" rx="5" ry="7"/>
+    <ellipse cx="40" cy="14" rx="5" ry="7"/>
+    <ellipse cx="52" cy="26" rx="5" ry="7"/>
+  </g>
+</svg>
