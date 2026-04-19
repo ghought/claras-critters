@@ -4,50 +4,44 @@
     {
       "service": "Drop-in visit",
       "duration": "30 min",
-      "price": "$22",
-      "notes": "Feeding, fresh water, potty break, and play."
+      "price": "$35",
+      "notes": "Feeding, fresh water, potty break, and play for dogs and cats"
     },
     {
       "service": "Dog walk",
       "duration": "30 min",
-      "price": "$25",
-      "notes": "Single dog. +$5 per additional dog from the same household."
+      "price": "$40",
+      "notes": "+$15 per additional dog from the same household."
     },
     {
       "service": "Dog walk",
       "duration": "60 min",
-      "price": "$40",
-      "notes": "Single dog. Great for high-energy breeds."
+      "price": "$65",
+      "notes": ""
     },
     {
       "service": "Overnight sitting (in-home)",
       "duration": "Per night",
-      "price": "$85",
-      "notes": "Includes evening and morning care for your pets."
-    },
-    {
-      "service": "Cat care visit",
-      "duration": "30 min",
-      "price": "$22",
-      "notes": "Litter, food, water, and quiet company."
+      "price": "$80/night, $20 for every extra animal",
+      "notes": "Prices are subject to change based on responsibilities, farm care, etc."
     },
     {
       "service": "Medication administration",
       "duration": "Per visit",
       "price": "+$5",
-      "notes": "Add-on for any visit. No charge for simple oral meds."
+      "notes": "Add-on for any visit. "
     },
     {
-      "service": "Horse care visit",
-      "duration": "Per visit",
-      "price": "$35",
-      "notes": "Feeding, water, turnout, stall pick, and a once-over."
+      "service": "Horse care drop in",
+      "duration": "60 minutes ",
+      "price": "$65",
+      "notes": "Feeding, water, turnout, stall cleaning, brushing"
     },
     {
-      "service": "Exercise ride or lunging",
-      "duration": "45 min",
-      "price": "$45",
-      "notes": "Standalone or add-on. We'll discuss your horse at the meet & greet."
+      "service": "Equine overnights",
+      "duration": "Per night",
+      "price": "$100 base rate for one horse",
+      "notes": "Please message Clara for specific rates!"
     }
   ]
 }
